@@ -37,12 +37,10 @@
   grid-row-start: 4;
   grid-row-end: 6;
 }
-
-
-
-
-
-
+.container{
+  display: flex;
+  justify-content: center;
+}
 
 
 

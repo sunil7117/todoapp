@@ -2,12 +2,14 @@ import React, { useState } from "react";
 
 const Code = () => {
   const [input, setInput] = useState("");
-  const dummydata = [
-    { course: "HTML" },
-    { course: "CSS" },
-    { course: "JavaScript" },
-  ];
-  const handleInput = () => {};
+  const [data, setData] = useState([{ course: "HTML" }]);
+  const handleInput = (e) => {
+    setInput(e.target.value);
+  };
+  const handleAdd = () => {
+    setData((prev) => [...prev, { course: input }]);
+    setInput("");
+  };
   return (
     <div>
       <div className="input-filed">
@@ -17,12 +19,12 @@ const Code = () => {
           value={input}
           onChange={handleInput}
         />
-        <button>Go!</button>
+        <button onClick={handleAdd}>Go!</button>
       </div>
       <div className="container">
         <table border={1}>
           <tbody>
-            {dummydata.map((data, index) => (
+            {data.map((data, index) => (
               <tr key={index}>
                 <td>{index}</td>
                 <td>{data.course}</td>

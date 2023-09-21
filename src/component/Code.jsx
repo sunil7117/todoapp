@@ -3,12 +3,24 @@ import React, { useState } from "react";
 const Code = () => {
   const [input, setInput] = useState("");
   const [data, setData] = useState([{ course: "HTML" }]);
+  const [isUpdate, setIsupdate] = useState(false);
   const handleInput = (e) => {
     setInput(e.target.value);
   };
   const handleAdd = () => {
     setData((prev) => [...prev, { course: input }]);
     setInput("");
+  };
+  const handleUpdate = (item, index) => {
+    const inputValue = prompt("please enter value", item);
+    setData((prev) =>
+      prev.map((check, setindex) => {
+        if (index === setindex) {
+          return { ...check, course: inputValue };
+        }
+        return check;
+      })
+    );
   };
   return (
     <div>
@@ -29,7 +41,9 @@ const Code = () => {
                 <td>{index}</td>
                 <td>{data.course}</td>
                 <td>
-                  <button>Update</button>
+                  <button onClick={() => handleUpdate(data.course, index)}>
+                    Update
+                  </button>
                 </td>
                 <td>
                   <button>Delete</button>

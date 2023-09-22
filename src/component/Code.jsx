@@ -3,7 +3,6 @@ import React, { useState } from "react";
 const Code = () => {
   const [input, setInput] = useState("");
   const [data, setData] = useState([{ course: "HTML" }]);
-  const [isUpdate, setIsupdate] = useState(false);
   const handleInput = (e) => {
     setInput(e.target.value);
   };

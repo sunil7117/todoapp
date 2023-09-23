@@ -22,7 +22,10 @@ const Code = () => {
     );
   };
   const handleDelete = (item) => {
-    alert(item);
+    const matched = data.filter((data) => {
+      return data.course !== item;
+    });
+    setData(matched);
   };
   return (
     <div>

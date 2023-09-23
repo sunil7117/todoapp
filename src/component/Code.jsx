@@ -21,6 +21,9 @@ const Code = () => {
       })
     );
   };
+  const handleDelete = (item) => {
+    console.log(item);
+  };
   return (
     <div>
       <div className="input-filed">
@@ -45,7 +48,9 @@ const Code = () => {
                   </button>
                 </td>
                 <td>
-                  <button>Delete</button>
+                  <button onClick={() => handleDelete(data.course)}>
+                    Delete
+                  </button>
                 </td>
               </tr>
             ))}

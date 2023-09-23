@@ -22,7 +22,7 @@ const Code = () => {
     );
   };
   const handleDelete = (item) => {
-    console.log(item);
+    alert(item);
   };
   return (
     <div>
